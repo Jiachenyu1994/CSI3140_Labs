@@ -1,0 +1,51 @@
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+}
+
+.top-heading{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+h2{
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+h3{
+    font-weight: bold;
+}
+
+h4{
+
+    font-weight: normal;
+}
+
+table{
+    border-collapse: seperate;
+    width: 100%;
+    border:none;
+}
+
+.left-tabledata{
+    text-align: left;
+    font-weight: bold;
+    width: 33%;
+}
+
+.right-tabledata{
+    text-align: right;
+    width: 33%;
+}
+
+hr{
+    margin-bottom: 30px;    /* Reduces the space above the hr */
+    
+}
+body {
+    background-color: bisque;
+}
