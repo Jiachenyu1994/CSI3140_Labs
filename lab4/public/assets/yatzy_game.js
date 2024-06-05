@@ -4,44 +4,31 @@ var dicestwo = [];
 
 var dicepointerone = 0;
 var dicepointertwo = 0;
+var score1=0;
+var score2=0;
 
-
-
-function getRoll(){
-    return roll;
-}
-
-function getDiceValue(Dice){
-    return Dice.diceValue;
-}
-
-function getState(Dice){
-    return Dice.state;
-}
 
 function roll(){
-    var dice = dices[dicepointerone];
-    if(dice.getNumofRolls() >= 2){
+    let dice = dices[dicepointerone];
+    if(dice.getStates() >= 2){
         alert("this dice has hit max number of rolls of 2");
     } else{
-        dice.rollDice();
-        
+        dice.rollDice();    
     }
-
+    updateDice();
 }
 
-function rollTwo(){
-    var dice = dices[dicepointertwo];
-    if(dice.getNumofRolls() >= 2){
+function roll2(){
+    let dice = dicestwo[dicepointertwo];
+    if(dice.getStates() >= 2){
         alert("this dice has hit max number of rolls of 2");
     } else{
-        dice.rollDice();
-        
+        dice.rollDice();    
     }
-
+    updateDice();
 }
 
-function nextOne(){
+function next(){
     if (dicepointerone >= 5){
         alert("All 5 dice are rolled, it is the next person's turn");
     } else{
@@ -49,7 +36,7 @@ function nextOne(){
     }
 }
 
-function nextTwo(){
+function next2(){
     if (dicepointertwo >= 5){
         alert("All 5 dice are rolled, it is the next person's turn");
     } else{
@@ -59,9 +46,16 @@ function nextTwo(){
 
 
 
-function test(){
-    
+function init(){
 
+    roll = 0;
+    dices = [];
+    dicestwo = []; 
+    dicepointerone = 0;
+    dicepointertwo = 0;
+    score1=0;
+    score2=0;
+    
     for (i = 0 ; i<5; i++){
         let dice = new Dice(i);
         dices.push(dice);
@@ -72,8 +66,13 @@ function test(){
         dicestwo.push(dice);
     }
     
-    var dicearrayonePrinted =  document.getElementById("diceArrayOne")
-    var dicearrayonePrintedTwo =  document.getElementById("diceArrayTwo")
+    
+    
+}
+
+function updateDice(){
+    var dicearrayonePrinted =  document.getElementById("dices1");
+    var dicearrayonePrintedTwo =  document.getElementById("dices2");
 
     var dicestring = "";
     var dicestringTwo = "";
@@ -82,8 +81,10 @@ function test(){
         var diceprint = dices[i].getDiceValue().toString();
         var diceprinttwo = dicestwo[i].getDiceValue().toString();
         dicestring += diceprint;
+        dicestring += " ";
         dicestringTwo +=diceprinttwo;
-
+        dicestringTwo+=" ";
     }
-    
+    dicearrayonePrinted.textContent=dicestring;
+    dicearrayonePrintedTwo.textContent=dicestringTwo;
 }
