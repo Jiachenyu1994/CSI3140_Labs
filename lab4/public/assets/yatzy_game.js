@@ -30,7 +30,7 @@ function roll2(){
 }
 
 function next(){
-    if (dicepointerone > 4){
+    if (dicepointerone >= 4){
         alert("All 5 dice are rolled, it is the next person's turn");
     } else{
         dicepointerone += 1;
@@ -38,7 +38,7 @@ function next(){
 }
 
 function next2(){
-    if (dicepointertwo >= 5){
+    if (dicepointertwo >= 4){
         alert("All 5 dice are rolled, it is the next person's turn");
     } else{
         dicepointertwo += 1;
