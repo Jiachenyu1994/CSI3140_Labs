@@ -15,6 +15,9 @@ class Dice {
     getStates(){
         return this.states;
     }
+    getDiceValue(){
+        return this.diceValue;
+    }
 
     
 

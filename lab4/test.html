@@ -11,30 +11,34 @@
         <button onclick="init()">Set up Game</button>
         <div id="play1">
             <h2>Player 1</h2>
-            <h3>Score:</h3>
-            <h3 id="score">0</h3>
+            <h3>Records:</h3>
+            <div id="records">
+
+            </div>
             <p>Dices:</p>
             <p id="dices1">0 0 0 0 0</p>
             <button onclick="roll()">Roll</button>
-            <button onclick="">Next dice</button>
-            <button onclick="">Next turn</button>
+            <button onclick="next()">Next dice</button>
         </div>
         <div id="play2">
             <h2>Player 2</h2>
-            <h3>Score:</h3>
-            <h3 id="score2">0</h3>
+            <h3>Records:</h3>
+            <div id="records2">
+
+            </div>
             <p>Dices:</p>
             <p id="dices2">0 0 0 0 0</p>
             <button onclick="roll2()">Roll</button>
-            <button onclick="">Next dice</button>
-            <button onclick="">Next turn</button>
+            <button onclick="next2()">Next dice</button>
         </div>
+        <br>
+        <button onclick="nextTurn()">Next turn</button>
 
 
-       
-    </body>
     <script src = "./public/assets/dice.js"></script>
     <script src = "./public/assets/yatzy_game.js"></script>
     <script src = "./public/assets/yatzy_engine.js"></script>
+        
+    </body>
     
 </html>
