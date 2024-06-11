@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatzy Game Dice Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .dice-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .dice {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .dot {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .dot-1 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .dot-2 { top: 20%; left: 20%; }
+        .dot-3 { top: 20%; right: 20%; }
+        .dot-4 { bottom: 20%; left: 20%; }
+        .dot-5 { bottom: 20%; right: 20%; }
+        .dot-6 { top: 50%; left: 20%; transform: translateY(-50%); }
+        .dot-7 { top: 50%; right: 20%; transform: translateY(-50%); }
+    </style>
+</head>
+<body>
+    <div class="dice-container">
+        <!-- Dice showing 1 -->
+        <div class="dice">
+            <div class="dot dot-1"></div>
+        </div>
+        <!-- Dice showing 2 -->
+        <div class="dice">
+            <div class="dot dot-2"></div>
+            <div class="dot dot-5"></div>
+        </div>
+        <!-- Dice showing 3 -->
+        <div class="dice">
+            <div class="dot dot-2"></div>
+            <div class="dot dot-1"></div>
+            <div class="dot dot-5"></div>
+        </div>
+        <!-- Dice showing 4 -->
+        <div class="dice">
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+            <div class="dot dot-4"></div>
+            <div class="dot dot-5"></div>
+        </div>
+        <!-- Dice showing 5 -->
+        <div class="dice">
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+            <div class="dot dot-4"></div>
+            <div class="dot dot-5"></div>
+            <div class="dot dot-1"></div>
+        </div>
+        <!-- Dice showing 6 -->
+        <div class="dice">
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+            <div class="dot dot-4"></div>
+            <div class="dot dot-5"></div>
+            <div class="dot dot-6"></div>
+            <div class="dot dot-7"></div>
+        </div>
+    </div>
+</body>
+</html>
