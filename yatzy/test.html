@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lab 4</title>
+    </header>
+
+    <body>
+        <h1>Yatzy Game - 2 player</h1>
+        <button onclick="init()">Set up Game</button>
+        <div id="play1">
+            <h2>Player 1</h2>
+            <h3>Records:</h3>
+            <div id="records">
+
+            </div>
+            <p>Dices:</p>
+            <p id="dices1">0 0 0 0 0</p>
+            <button onclick="roll()">Roll</button>
+            <button onclick="next()">Next dice</button>
+        </div>
+        <div id="play2">
+            <h2>Player 2</h2>
+            <h3>Records:</h3>
+            <div id="records2">
+
+            </div>
+            <p>Dices:</p>
+            <p id="dices2">0 0 0 0 0</p>
+            <button onclick="roll2()">Roll</button>
+            <button onclick="next2()">Next dice</button>
+        </div>
+        <br>
+        <button onclick="nextTurn()">Next turn</button>
+
+
+    <script src = "./public/assets/dice.js"></script>
+    <script src = "./public/assets/yatzy_game.js"></script>
+    </body>
+    
+</html>
