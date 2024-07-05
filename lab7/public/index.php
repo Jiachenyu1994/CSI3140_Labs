@@ -3,31 +3,34 @@
     
 ?>
 
-<div id="die1">--</div>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
 
-<button id="rollTest">Roll</button>
+
+        <div id="die1">--</div>
+
+        <button id="rollTest">Roll</button>
 
 
-<script>
-    const die1=document.getElementById("die1");
-    const roll=document.getElementById("rollTest");
-  
+        <script>
+            const die1=document.getElementById("die1");
+            const roll=document.getElementById("rollTest");
 
-    roll.onclick=function(){
 
-        const xmlhttp=new XMLHttpRequest();
-
-        xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-            if (xmlhttp.status == 200) {
-                die1.innerHTML = xmlhttp.responseText;
-            }
-        }
-  };
-
-        xmlhttp.open("GET","/api.php?action=roll",true);
-        xmlhttp.send();
-    };
-
+        
+            roll.onclick = async function() {
+                let answer = $.ajax({
+                type: "GET",
+                url: "api.php?action=roll"
+                }).then(function(data) {
+                die1.innerHTML = data.value;
+                });
+            };
    
-</script>
+
+        </script>
+    </body>
+    </html>
