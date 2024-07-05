@@ -1,36 +1,25 @@
 <?php
-    require_once('_config.php');
-    
-?>
+require_once('_config.php');
 
-<html>
-    <head>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Factory\AppFactory;
 
+$app = AppFactory::create();
 
-        <div id="die1">--</div>
+// Serve the main HTML page
+$app->get('/', function (Request $request, Response $response, $args) {
+    $view = file_get_contents("{$GLOBALS["appDir"]}/views/index.html");
+    $response->getBody()->write($view);
+    return $response;
+});
 
-        <button id="rollTest">Roll</button>
+// API endpoint for rolling the die
+$app->get('/api/roll', function (Request $request, Response $response, $args) {
+    $dice = new \app\yatzy\Dice();
+    $result = ["value" => $dice->roll()];
+    $response->getBody()->write(json_encode($result));
+    return $response->withHeader('Content-Type', 'application/json');
+});
 
-
-        <script>
-            const die1=document.getElementById("die1");
-            const roll=document.getElementById("rollTest");
-
-
-        
-            roll.onclick = async function() {
-                let answer = $.ajax({
-                type: "GET",
-                url: "api.php?action=roll"
-                }).then(function(data) {
-                die1.innerHTML = data.value;
-                });
-            };
-   
-
-        </script>
-    </body>
-    </html>
+$app->run();
