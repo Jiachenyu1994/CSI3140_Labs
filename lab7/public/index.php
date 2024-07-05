@@ -16,10 +16,10 @@ $app->get('/', function (Request $request, Response $response, $args) {
 
 // API endpoint for rolling the die
 $app->get('/api/roll', function (Request $request, Response $response, $args) {
-    $dice = new \app\yatzy\Dice();
-    $result = ["value" => $dice->roll()];
+    $dice = new \app\yatzy\Dice(1);
+    $result = ["value" => $dice->rollDice()];
     $response->getBody()->write(json_encode($result));
-    return $response->withHeader('Content-Type', 'application/json');
+    return $response;
 });
 
 

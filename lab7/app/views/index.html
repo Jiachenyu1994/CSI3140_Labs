@@ -17,7 +17,7 @@
       try {
         let data = await $.ajax({
           type: "GET",
-          url: "api.php?action=roll",
+          url: "api/roll",
           dataType: "json" 
         });
         die1.innerHTML = data.value;
